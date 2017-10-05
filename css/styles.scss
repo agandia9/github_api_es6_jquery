@@ -1,0 +1,32 @@
+$font: 'Encode Sans Expanded',sans-serif;
+
+* {
+	font-family: $font;
+}
+
+h1 {
+	font-size: 25px !important;
+}
+
+.jumbotron {
+	margin-bottom: 0px !important;
+	padding: 30px;
+	input[type="text"] {
+		padding: 10px;
+		border: none;
+		border-bottom: solid 3px #c9c9c9;
+		transition: border 0.5s;
+		background-color: transparent;
+	}
+	input[type="text"]:focus,
+	input[type="text"].focus {
+		 outline: none;
+		border-bottom: solid 3px #969696;
+	}
+	.thumbnail{
+		a{
+			display: inline-block;
+			text-decoration: none;
+		}
+	}
+}
