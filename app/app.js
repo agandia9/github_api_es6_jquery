@@ -1,10 +1,9 @@
 $('button').on('click', () => {
-	var user = $('input').val()
-	var url = 'https://api.github.com/users/' + user + '/repos'
+	const user = $('input').val()
+	const url = 'https://api.github.com/users/' + user + '/repos'
 	$.ajax({
 		url: url
 	}).then(function(data){
-		console.log(data)
 		data.forEach(function(obj,index){
 			$('#profile-pic').attr('src', obj.owner.avatar_url)
 			$('#profile-userName').text(obj.owner.login)
@@ -16,11 +15,12 @@ $('button').on('click', () => {
 			}else{
 				$(`#logo_lenguage${index}`).attr('src', 'http://keithmackay.com/images/picture.jpg')
 			}
-			var followers = obj.owner.followers_url
+			const followers = obj.owner.followers_url
 			$.ajax({
 				url: followers
 			}).then(function(oData){
-				var nFollows = oData.length
+				console.log(oData)
+				const nFollows = oData.length
 				$('.col-sm-4 p').text('Followers 👥: ' + nFollows)
 			})
 		})
